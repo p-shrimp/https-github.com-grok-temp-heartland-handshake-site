@@ -1,4 +1,15 @@
 <!-- CUTTING-EDGE HERO WITH PHOTO SLIDESHOW + SMOOTH TEXT FADE -->
+
+<style>
+  section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none;
+    z-index: 10;
+  }
+</style>
 <section class="relative h-screen overflow-hidden">
   <!-- Background Slideshow (parallax zoom) -->
   <div x-data="slideshow()" class="absolute inset-0">
