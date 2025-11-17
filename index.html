@@ -1,174 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Heartland Handshake | Save $3k+ on Your Next Car</title>
-  <meta name="description" content="Ex-dealer turned buyer advocate. I negotiate your car deal so you save thousands. $49 audits • $1,999 full service.">
+  <meta name="description" content="Ex-dealer turned buyer advocate. I negotiate your car deal so you save thousands — or it's free." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    :root{--brown:#8B4513;--gold:#E8B923;--dark:#0F0A05;--light:#FAF8F5;}
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Inter',sans-serif;background:var(--light);color:var(--dark);line-height:1.6;overflow-x:hidden;}
-    .container{max-width:1280px;margin:0 auto;padding:0 24px;}
-    header{position:sticky;top:0;background:var(--dark);color:#fff;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,0.1);}
-    nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;}
-    nav a{color:#fff;text-decoration:none;font-weight:500;margin:0 1rem;font-size:1.1rem;}
-    nav a:hover{color:var(--gold);}
-    .btn{background:var(--gold);color:var(--dark);padding:12px 24px;border-radius:50px;font-weight:600;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 12px rgba(232,185,35,0.3);}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(232,185,35,0.4);}
-    .hero{min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,rgba(15,10,5,0.9),rgba(139,69,19,0.6)),url('https://images.unsplash.com/photo-1559416522-0619d5661e64?auto=format&fit=crop&w=2000&q=90') center/cover;color:#fff;}
-    .hero h1{font-family:'Clash Display',sans-serif;font-size:clamp(3rem,8vw,6rem);margin-bottom:1rem;}
-    .hero p{font-size:1.3rem;max-width:700px;margin:0 auto 2rem;opacity:0.95;}
-    .headline-rotator{font-size:2.5rem;font-weight:700;color:var(--gold);margin-bottom:2rem;opacity:0;animation:fadeIn 1s forwards;}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-    section{padding:5rem 0;}
-    h2{font-family:'Clash Display',sans-serif;font-size:clamp(2.5rem,6vw,4rem);text-align:center;margin-bottom:3rem;color:var(--brown);}
-    .pricing-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:3rem 0;}
-    .pricing-card{background:#fff;border-radius:20px;padding:2.5rem;box-shadow:0 10px 40px rgba(0,0,0,0.1);text-align:center;transition:all 0.3s;}
-    .pricing-card:hover{transform:translateY(-10px);box-shadow:0 20px 60px rgba(0,0,0,0.15);}
-    .price{font-size:4rem;font-weight:700;color:var(--gold);margin:1rem 0;}
-    .blog-teaser{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:3rem 0;}
-    .blog-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.1);transition:all 0.3s;}
-    .blog-card:hover{transform:translateY(-5px);}
-    .blog-card img{width:100%;height:200px;object-fit:cover;}
-    .blog-card h3{font-size:1.5rem;padding:1rem;color:var(--brown);margin-bottom:0.5rem;}
-    .blog-card p{padding:0 1rem 1rem;color:#666;}
-    .login-form{max-width:400px;margin:0 auto;background:#fff;border-radius:16px;padding:2.5rem;box-shadow:0 10px 40px rgba(0,0,0,0.1);}
-    input,textarea{width:100%;padding:1rem;border:1px solid #ddd;border-radius:8px;margin-bottom:1rem;font-size:1rem;}
-    button{width:100%;background:var(--gold);color:var(--dark);border:none;padding:1rem;border-radius:8px;font-weight:600;cursor:pointer;}
-    footer{background:var(--dark);color:#ccc;padding:3rem 0;text-align:center;}
-    @media(max-width:768px){nav{flex-direction:column;gap:1rem;}}
+    body { font-family: 'Inter', sans-serif; background: #0F0A05; color: #FAF8F5; }
+    h1, h2, h3 { font-family: 'Clash Display', sans-serif; }
+    .glass { backdrop-filter: blur(12px); background: rgba(15,10,5,0.4); border: 1px solid rgba(232,185,35,0.2); }
   </style>
 </head>
-<body>
+<body class="min-h-screen">
 
-<header>
-  <nav class="container">
-    <a href="#home" class="logo">Heartland Handshake</a>
-    <div>
-      <a href="#pricing" class="nav-link">Pricing</a>
-      <a href="#blog" class="nav-link">Blog</a>
-      <a href="#login" class="nav-link">Login</a>
-      <a href="#pricing" class="btn">Get Started</a>
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full z-50 glass border-b border-amber-900/30">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-amber-400">Heartland Handshake</a>
+      <div class="flex gap-8 items-center text-white/90">
+        <a href="#pricing" class="hover:text-amber-400 transition">Pricing</a>
+        <a href="blog.html" class="hover:text-amber-400 transition">Blog</a>
+        <a href="login.html" class="hover:text-amber-400 transition">Login</a>
+        <a href="#newsletter" class="bg-amber-400 text-black px-6 py-3 rounded-full font-bold hover:bg-amber-300 transition">Get Started</a>
+      </div>
     </div>
   </nav>
-</header>
 
-<section id="home" class="hero">
-  <div class="container">
-    <h1>Heartland Handshake</h1>
-    <div id="headline-rotator" class="headline-rotator"></div>
-    <p>Ex-dealer turned buyer advocate. I negotiate your car deal so you save thousands — or it's free.</p>
-    <a href="#contact" class="btn">Free Quote Review</a>
-    <a href="#pricing" class="btn btn-outline">View Pricing</a>
-  </div>
-</section>
-
-<section id="pricing">
-  <div class="container">
-    <h2>Choose Your Plan</h2>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3>Quote Audit</h3>
-        <div class="price">$49</div>
-        <p>Line-by-line dealer quote review with savings report.</p>
-        <a href="https://gumroad.com/l/your-audit-product" class="btn">Buy Now</a>
-      </div>
-      <div class="pricing-card" style="border:2px solid var(--gold);">
-        <h3>Strategy Call</h3>
-        <div class="price">$99</div>
-        <p>15-minute call + custom negotiation scripts.</p>
-        <a href="https://gumroad.com/l/your-call-product" class="btn">Book Now</a>
-      </div>
-      <div class="pricing-card">
-        <h3>Full Representation</h3>
-        <div class="price">$1,999</div>
-        <p>I handle everything – dealers, negotiation, contracts. Save $3k+ or free.</p>
-        <a href="mailto:hello@heartlandhandshake.com" class="btn">Inquire</a>
+  <!-- Hero with Rotating Headlines -->
+  <section class="min-h-screen flex items-center justify-center text-center px-6 bg-gradient-to-br from-amber-900/20 via-black to-slate-900">
+    <div x-data="{ headlines: ['Save $3,000+ on Your Next Car — Guaranteed','Ex-Dealer Negotiates Your Best Price','No Haggling. No Games. Just Results.','Nebraska’s Only Independent Buyer Advocate'], index: 0 }"
+         x-init="setInterval(() => index = (index + 1) % headlines.length, 3500)">
+      <h1 class="text-5xl md:text-7xl font-black mb-8 text-white">
+        <span x-text="headlines[index]" 
+              class="inline-block opacity-0 animate-fadeIn" 
+              :key="index"></span>
+      </h1>
+      <p class="text-xl md:text-2xl max-w-4xl mx-auto opacity-90 mb-12">
+        Ex-dealer turned buyer advocate. I negotiate your car deal so you save thousands — or it’s free.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="#newsletter" class="bg-amber-400 text-black px-10 py-5 rounded-full text-xl font-bold hover:bg-amber-300 transition shadow-2xl">Free Quote Review</a>
+        <a href="#pricing" class="border-2 border-amber-400 text-amber-400 px-10 py-5 rounded-full text-xl font-bold hover:bg-amber-400 hover:text-black transition">View Pricing</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="blog">
-  <div class="container">
-    <h2>Automotive News & Insights</h2>
-    <div class="blog-teaser">
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1558618047-8c38b4a5c3e8?w=400&h=200&fit=crop" alt="Car Market Update">
-        <h3>2025 Used Car Market Update</h3>
-        <p>Inventory up 15% – best time to buy in 3 years.</p>
-        <a href="https://docs.google.com/document/d/your-free-blog-link" class="btn">Read Free</a>
-      </div>
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1558618047-8c38b4a5c3e8?w=400&h=200&fit=crop" alt="VIP Pricing">
-        <h3>VIP: Live Invoice Pricing</h3>
-        <p>Real-time dealer invoice data (paid members only).</p>
-        <a href="#login" class="btn">Login for VIP</a>
+  <!-- Pricing Preview -->
+  <section id="pricing" class="py-32 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-5xl md:text-6xl font-black mb-20 text-amber-400">Choose Your Level</h2>
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="glass rounded-3xl p-10 hover:scale-105 transition">
+          <h3 class="text-3xl font-bold mb-4">Audit</h3>
+          <div class="text-6xl font-black text-amber-400 mb-6">$49</div>
+          <a href="https://gumroad.com/l/heartlandaudit" class="block bg-amber-400 text-black py-4 rounded-full font-bold hover:bg-amber-300">Buy Now</a>
+        </div>
+        <div class="glass rounded-3xl p-10 ring-4 ring-amber-400 scale-110 shadow-2xl">
+          <h3 class="text-4xl font-bold mb-4">Full Representation</h3>
+          <div class="text-7xl font-black text-amber-400 mb-6">$1,999</div>
+          <a href="mailto:hello@heartlandhandshake.com" class="block bg-black text-amber-400 py-4 rounded-full font-bold hover:bg-gray-900">Inquire Now</a>
+        </div>
+        <div class="glass rounded-3xl p-10 hover:scale-105 transition">
+          <h3 class="text-3xl font-bold mb-4">Info Plan</h3>
+          <div class="text-6xl font-black text-amber-400 mb-6">$99<span class="text-3xl">/mo</span></div>
+          <a href="login.html" class="block bg-amber-400 text-black py-4 rounded-full font-bold hover:bg-amber-300">Join VIP</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="login">
-  <div class="container">
-    <h2>Login to VIP Dashboard</h2>
-    <div class="login-form">
-      <form>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <button type="submit">Sign In</button>
+  <!-- Newsletter -->
+  <section id="newsletter" class="py-32 px-6 bg-gradient-to-t from-black to-transparent">
+    <div class="max-w-4xl mx-auto text-center glass rounded-3xl p-16">
+      <h2 class="text-5xl font-black mb-8 text-amber-400">Get Weekly Car Deal Intel</h2>
+      <p class="text-xl mb-12 opacity-90">Real-time pricing, dealer tricks, and Midwest market updates — free.</p>
+      <form action="https://formspree.io/f/your-id" method="POST" class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+        <input type="email" name="email" placeholder="you@example.com" required class="flex-1 px-6 py-4 rounded-full text-black text-lg">
+        <button type="submit" class="bg-amber-400 text-black px-10 py-4 rounded-full font-bold hover:bg-amber-300 transition">Subscribe Free</button>
       </form>
-      <p style="text-align:center;margin-top:1rem;">No account? <a href="#pricing" style="color:var(--gold);">Join VIP</a></p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <div class="container">
-    <h2>Get Your Free Quote Review</h2>
-    <form style="max-width:600px;margin:0 auto;">
-      <input type="text" placeholder="Name" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Paste your dealer quote or question..." rows="5" required></textarea>
-      <button type="submit" class="btn" style="width:100%;padding:1.5rem;">Send Message</button>
-    </form>
-  </div>
-</section>
+  <footer class="py-12 text-center text-white/60">
+    <p>© 2025 Heartland Handshake LLC • Nebraska • Independent Service</p>
+  </footer>
 
-<footer>
-  <div class="container">
-    <p>&copy; 2025 Heartland Handshake LLC • Nebraska • Independent Service</p>
-  </div>
-</footer>
-
-<script>
-// Rotating Headlines
-const headlines = [
-  "Save $3,000+ on Your Next Car — Guaranteed",
-  "Ex-Dealer Negotiates Your Best Price",
-  "No Haggling. No Games. Just Results.",
-  "Nebraska's Only Independent Buyer Advocate"
-];
-let current = 0;
-const rotator = document.getElementById('headline-rotator');
-setInterval(() => {
-  rotator.style.opacity = '0';
-  setTimeout(() => {
-    current = (current + 1) % headlines.length;
-    rotator.textContent = headlines[current];
-    rotator.style.opacity = '1';
-  }, 300);
-}, 4000);
-
-// Simple form submission (to email)
-document.querySelector('form').addEventListener('submit', e => {
-  e.preventDefault();
-  alert('Message sent! Check your email for confirmation.');
-  // Replace with real Formspree or email API
-});
-</script>
-
+  <style>
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fadeIn { animation: fadeIn 1s forwards; }
+  </style>
 </body>
 </html>
