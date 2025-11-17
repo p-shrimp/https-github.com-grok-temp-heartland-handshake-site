@@ -232,6 +232,69 @@ document.addEventListener('mousemove', e => {
 
 // Random horns every 2-5 seconds
 setInterval(() => {
+  const audio = new Audio('https://www.pond5.com/sound-effects/item/58316678-grunting-sound?dd_referrer=https%3A%2F%2Fwww.google.com%2F');
+  audio.play().catch(() => {});
+}, Math.random() * 3000 + 2000);
+</script>
+<!-- END MAXIMUM CHAOS -->
+  <!-- MAXIMUM CHAOS MODE — DELETE WHEN FBI ARRIVES -->
+<div id="chaos-9000" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:99999;overflow:hidden;background:linear-gradient(45deg,#ff0000,#00ff00,#0000ff,#ffff00,#ff00ff);background-size:600%;animation:chaosBG 6s infinite;pointer-events:none;">
+
+  <!-- SCREAMING TEXT -->
+  <h1 style="position:absolute;top:5%;left:50%;transform:translateX(-50%);font-size:clamp(4rem,18vw,16rem);color:#fff;text-shadow:0 0 40px #f00,0 0 80px #0f0;font-weight:900;
+             animation:blink 0.3s infinite alternate,scream 2s infinite;font-family:'Comic Sans MS';letter-spacing:0.2em;">
+    🔥🔥 GRAVY SEASON IS HERE 🔥🔥
+  </h1>
+
+  <!-- SPINNING + BOUNCING PHOTOS (replace URLs) -->
+  <img src="https://images.freeimages.com/image/previews/fa3/money-icon-png-finance-bills-5690620.png" class="chaos-img" style="top:10%;left:5%;width:280px;animation:spin 2s infinite linear,bounce 1.2s infinite;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCnfDUyMHruqPueNz12tBxXw2AcyG2fM6-Zg&s" class="chaos-img" style="top:55%;right:8%;width:320px;animation:spin 1.8s infinite reverse,flash 0.6s infinite;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-brfgkXtbX2OQk0QAoZTlCdfVquxD8-vKgw&s" class="chaos-img" style="bottom:10%;left:15%;width:240px;animation:bounce 1s infinite,spin 3s infinite;">
+  <img src="https://i.ebayimg.com/images/g/RfgAAOSw7fJgOptv/s-l400.png" class="chaos-img" style="top:30%;right:20%;width:300px;animation:wobble 0.8s infinite;">
+  <img src="https://static.vecteezy.com/system/resources/previews/037/276/729/non_2x/ai-generated-a-dollop-of-whipped-cream-isolated-on-a-transparent-background-png.png" class="chaos-img" style="bottom:25%;right:5%;width:260px;animation:spin 2.5s infinite,flash 0.5s infinite;">
+
+  <!-- MOUSE-FOLLOWING "BUY NOW" BUTTON -->
+  <div id="follow-btn" style="position:fixed;padding:20px 50px;background:#ff00ff;color:#00ff00;font-size:3rem;font-weight:900;border:8px solid #ffff00;
+                               border-radius:50px;box-shadow:0 0 60px #f00;z-index:999999;pointer-events:all;cursor:pointer;">
+    BUY NOW OR CRY LATER!!!
+  </div>
+
+  <!-- FAKE WINDOWS XP ERROR POPUPS -->
+  <div class="error-popup" style="top:15%;left:10%;">⚠️ YOUR COMPUTER HAS VIRUS ⚠️</div>
+  <div class="error-popup" style="bottom:20%;right:15%;">🚨 CLICK OK TO CLAIM $1,000,000 🚨</div>
+
+  <!-- MARQUEES EVERYWHERE -->
+  <marquee direction="left" style="top:40%;font-size:5rem;color:#00ffff;">🚨 ACT NOW 🚨 LIMITED TIME 🚨 100% REAL 🚨</marquee>
+  <marquee direction="right" style="bottom:40%;font-size:4rem;color:#ff00ff;">WINNER WINNER CHICKEN DINNER 🍗🍗🍗</marquee>
+
+  <!-- CONFETTI CANNON -->
+  <div style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;">
+    <img src="https://i.imgur.com/5oQ6u9I.gif" style="width:100%;height:100%;object-fit:cover;opacity:0.7;">
+  </div>
+
+</div>
+
+<style>
+@keyframes chaosBG {0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes spin {from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes bounce {0%,100%{transform:translateY(0)}50%{transform:translateY(-50px)}}
+@keyframes wobble {0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes flash {0%{box-shadow:0 0 40px #fff}100%{box-shadow:0 0 80px #f00}}
+@keyframes scream {0%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.3)}100%{transform:translateX(-50%) scale(1)}}
+.chaos-img{position:absolute;border:12px dashed #ffff00;border-radius:50%;box-shadow:0 0 50px #ff00ff;}
+.error-popup{position:absolute;background:#0000ff;color:#ffff00;padding:15px 30px;border:5px solid #ff0000;font-size:2rem;font-weight:900;animation:blink 0.4s infinite;}
+</style>
+
+<script>
+// Mouse-following button of doom
+document.addEventListener('mousemove', e => {
+  const btn = document.getElementById('follow-btn');
+  btn.style.left = e.clientX + 20 + 'px';
+  btn.style.top = e.clientY - 20 + 'px';
+});
+
+// Random horns every 2-5 seconds
+setInterval(() => {
   const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
   audio.play().catch(() => {});
 }, Math.random() * 3000 + 2000);
@@ -240,6 +303,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
