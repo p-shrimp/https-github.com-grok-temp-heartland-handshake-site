@@ -3,72 +3,173 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartland Handshake – ENDLESS REDIRECT HELL</title>
+<title>Heartland Handshake | Independent Car-Buying Advocate</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  body{margin:0;overflow:hidden;height:100vh;background:#000;color:#fff;font-family:Arial, sans-serif;}
-  #chaos{display:flex;align-items:center;justify-content:center;height:100vh;flex-direction:column;transition:all 1.5s ease;}
-  h1{font-size:8vw;line-height:1;margin:0;}
-  p{font-size:4vw;margin:10px;}
-  a{font-size:5vw;padding:20px 40px;margin:20px;background:#ff0;color:#000;text-decoration:none;border-radius:50px;font-weight:900;}
+  body{margin:0;font-family:'Inter',sans-serif;background:#fafafa;color:#111;line-height:1.6;overflow-x:hidden;}
+  header{background:#0F0A05;color:#fff;padding:60px 20px;text-align:center;}
+  h1{font-size:3.5rem;margin:0;font-weight:700;}
+  p{max-width:800px;margin:20px auto;font-size:1.2rem;opacity:0.9;}
+  .btn{background:#E8B923;color:#000;padding:16px 32px;border-radius:50px;font-weight:700;text-decoration:none;display:inline-block;margin:10px;}
+  section{padding:80px 20px;text-align:center;}
+  .pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;max-width:1200px;margin:40px auto;}
+  .card{background:#fff;padding:40px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+  .price{font-size:3rem;font-weight:700;color:#0F0A05;}
+  footer{background:#0F0A05;color:#ccc;padding:40px;text-align:center;font-size:0.9rem;}
+  
+  /* Hidden Shaq Runner – activates on ↑ arrow */
+  #shaq-runner{display:none;position:fixed;inset:0;background:#fafafa;z-index:99999;}
+  #shaq-runner.active{display:block;}
+  canvas{display:block;margin:0 auto;background:#fafafa;}
 </style>
 </head>
 <body>
 
-<div id="chaos">
-  <h1>LOADING...</h1>
-  <p>infinite redirect in progress</p>
+<header>
+  <h1>Heartland Handshake</h1>
+  <p>Ex-dealer turned buyer advocate · Nebraska-based · Save $3k+ or it’s free</p>
+  <a href="#pricing" class="btn">See Pricing</a>
+  <a href="mailto:hello@heartlandhandshake.com" class="btn" style="background:transparent;border:2px solid #fff;">Get Free Quote Review</a>
+</header>
+
+<section id="pricing">
+  <h2>Choose Your Service</h2>
+  <div class="pricing">
+    <div class="card">
+      <h3>Audit</h3>
+      <div class="price">$49</div>
+      <p>Detailed line-by-line review of your dealer quote</p>
+      <a href="https://gumroad.com/l/heartlandaudit" class="btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <h3>Strategy Call</h3>
+      <div class="price">$99</div>
+      <p>15-minute call + custom dealer scripts</p>
+      <a href="https://gumroad.com/l/heartlandcall" class="btn">Book Call</a>
+    </div>
+    <div class="card" style="border:3px solid #E8B923;">
+      <h3>Full Representation</h3>
+      <div class="price">$1,999</div>
+      <p>I handle everything. You just sign the best deal.</p>
+      <a href="mailto:hello@heartlandhandshake.com" class="btn">Inquire →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Heartland Handshake LLC · Independent Service · Nebraska</p>
+</footer>
+
+<!-- SHAQ RUNNER (press ↑ to activate) -->
+<div id="shaq-runner">
+  <canvas id="canvas"></canvas>
+  <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);font-size:2rem;color:#000;">Press SPACE to make Shaq jump</div>
 </div>
 
 <script>
-// 8 INSANE THEMES
-const themes = [
-  // 1 – 1998 GeoCities
-  {bg: "url('https://i.imgur.com/8Qz3v5T.gif') repeat", color:"#0f0", body:"<h1><blink>WELCOME TO HEARTLAND HANDSHAKE 1998</blink></h1><p>UNDER CONSTRUCTION 🚧</p><marquee>DEALS DEALS DEALS</marquee>"},
-  
-  // 2 – MySpace glitter nightmare
-  {bg: "#000 url('https://i.imgur.com/J3X3X3X.gif') fixed", color:"#ff00ff", body:"<h1 style='text-shadow:0 0 20px #f0f'>xX HeartlandHandshake Xx</h1><p>thx 4 the add! 💖</p>"},
-  
-  // 3 – Fake Windows XP error
-  {bg: "#0000d4", color:"#fff", body:"<h1>🚨 SYSTEM ERROR 🚨</h1><p>Your car deal has performed an illegal operation and will be shut down.</p><a href='#'>OK</a>"},
-  
-  // 4 – Nigerian prince scam
-  {bg: "#fff", color:"#000", body:"<h1>DEAR BELOVED</h1><p>I am Prince Shaq O'Neal from Nigeria. I have $50 million locked in a dealership...</p><a href='#'>HELP ME CLAIM</a>"},
-  
-  // 5 – Dealership SALE SALE SALE
-  {bg: "linear-gradient(45deg,red,yellow,red)", color:"#000", body:"<h1 style='animation:blink 0.5s infinite'>🚨 HUGE SAVINGS 🚨</h1><p>NO MONEY DOWN! BAD CREDIT OK! FREE HOT DOGS!</p>"},
-  
-  // 6 – 2025 AI vaporwave
-  {bg: "linear-gradient(45deg,#ff0066,#00ffff)", color:"#fff", body:"<h1>ＨＥＡＲＴＬＡＮＤ ＨＡＮＤＳＨＡＫＥ ２６９９</h1><p>negotiating your deal in the metaverse</p>"},
-  
-  // 7 – Tumblr 2014
-  {bg: "#36465d", color:"#ff9ff3", body:"<h1>heartland handshake aesthetic</h1><p>*plays lana del rey in the background*</p><p>reblog if you hate dealerships</p>"},
-  
-  // 8 – FULL SHAQ
-  {bg: "url('https://i.imgur.com/6N4kB0Q.gif') center/cover #000", color:"#FFD700", body:"<h1>SHAQ</h1><p>SHAQ SHAQ SHAQ SHAQ SHAQ</p><a href='https://gumroad.com/l/heartlandaudit'>SHAQ NOW</a>"}
-];
+// Press ↑ to reveal Shaq Runner
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowUp') {
+    document.getElementById('shaq-runner').classList.add('active');
+    initShaqRunner();
+  }
+});
 
-// Start the endless chaos
-let current = 0;
-function morph() {
-  current = (current + 1) % themes.length;
-  const t = themes[current];
+function initShaqRunner() {
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let score = 0;
+  let gameSpeed = 6;
+  let gravity = 0.6;
   
-  document.body.style.background = t.bg;
-  document.body.style.backgroundSize = current===0?"50px":(current===7?"cover":"400%");
-  document.getElementById('chaos').innerHTML = t.body;
-  
-  // Extra blink for XP error and dealership
-  if(current===2 || current===4) document.body.style.animation = "blink 0.4s infinite";
-  else document.body.style.animation = "";
-  
-  setTimeout(morph, Math.random()*5000 + 4000); // 4–9 seconds
+  const shaq = {
+    x: 100,
+    y: canvas.height - 150,
+    width: 100,
+    height: 120,
+    dy: 0,
+    jumping: false,
+    img: new Image()
+  };
+  shaq.img.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpGJe-5Zx02_z_sHZACx9k2m0Z6WUQMeU0Yw&s'; // dancing Shaq
+
+  const obstacles = [];
+  let frame = 0;
+
+  function spawnObstacle() {
+    if (frame % 120 === 0) {
+      obstacles.push({
+        x: canvas.width,
+        y: canvas.height - 120,
+        width: 80,
+        height: 100
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Ground
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, canvas.height - 50, canvas.width, 50);
+
+    // Draw Shaq
+    ctx.drawImage(shaq.img, shaq.x, shaq.y, shaq.width, shaq.height);
+
+    // Obstacles (dealer logos / cars)
+    obstacles.forEach((obs, i) => {
+      ctx.fillStyle = '#8B4513';
+      ctx.fillRect(obs.x, obs.y, obs.width, obs.height);
+      ctx.fillStyle = '#fff';
+      ctx.font = '30px Arial';
+      ctx.fillText('DEALER', obs.x + 5, obs.y + 50);
+      obs.x -= gameSpeed;
+
+      if (obs.x + obs.width < 0) obstacles.splice(i, 1);
+      if (obs.x < shaq.x + shaq.width && obs.x + obs.width > shaq.x &&
+          shaq.y + shaq.height > obs.y) {
+        alert(`SHAQ WAS STOPPED BY THE DEALER! Score: ${score}`);
+        location.reload();
+      }
+    });
+
+    // Score
+    score++;
+    ctx.fillStyle = '#000';
+    ctx.font = '30px Arial';
+    ctx.fillText(`Score: ${Math.floor(score/10)}`, 20, 50);
+
+    frame++;
+    spawnObstacle();
+    requestAnimationFrame(draw);
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.code === 'Space' && !shaq.jumping) {
+      shaq.dy = -15;
+      shaq.jumping = true;
+    }
+  });
+
+  // Gravity
+  setInterval(() => {
+    if (shaq.jumping) {
+      shaq.y += shaq.dy;
+      shaq.dy += gravity;
+      if (shaq.y >= canvas.height - 170) {
+        shaq.y = canvas.height - 170;
+        shaq.jumping = false;
+        shaq.dy = 0;
+      }
+    }
+  }, 20);
+
+  draw();
 }
-setTimeout(morph, 1500);
-
-// Optional CSS blink
-const style = document.createElement('style');
-style.textContent = `@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}`;
-document.head.appendChild(style);
 </script>
 
 </body>
