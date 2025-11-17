@@ -3,308 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Heartland Handshake | Save $3k+ on Your Fent Purchase</title>
-  <meta name="description" content="Ex-dealer turned buyer advocate. I negotiate your car deal so you save thousands. $49 audits • $1,999 full service • Save $3k or it's free." />
-
-  <!-- Fonts -->
+  <title>Heartland Handshake | MELTING DEALS</title>
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@600;700&family=Satoshi:wght@400;500;700&display=swap" rel="stylesheet">
-
   <style>
     :root{--brown:#8B4513;--gold:#E8B923;--dark:#0F0A05;--light:#FAF8F5;}
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Satoshi',sans-serif;background:var(--light);color:var(--dark);line-height:1.6;overflow-x:hidden;}
-    .container{max-width:1280px;margin:0 auto;padding:0 24px;}
-    .guarantee{position:fixed;top:20px;right:20px;background:var(--gold);color:var(--dark);padding:12px 24px;border-radius:50px;font-weight:700;z-index:1000;box-shadow:0 8px 30px rgba(0,0,0,.2);font-size:0.95rem;}
-    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,rgba(15,10,5,.9),rgba(139,69,19,.5)),url('https://images.unsplash.com/photo-1559416522-0619d5661e64?auto=format&fit=crop&w=2000&q=90') center/cover;color:white;padding:40px 20px;}
-    .hero h1{font-family:'Clash Display',sans-serif;font-size:clamp(3.5rem,9vw,8rem);line-height:0.9;margin-bottom:20px;}
-    .hero p{font-size:1.4rem;max-width:700px;margin:0 auto 32px;}
-    .btn{display:inline-block;background:var(--gold);color:var(--dark);padding:18px 40px;border-radius:100px;font-weight:600;font-size:1.1rem;text-decoration:none;margin:12px;transition:all .3s;box-shadow:0 8px 25px rgba(232,185,35,.3);}
-    .btn:hover{transform:translateY(-4px);}
-    .btn-outline{background:transparent;border:2px solid white;color:white;}
-    h2{font-family:'Clash Display',sans-serif;font-size:clamp(2.8rem,7vw,5rem);text-align:center;margin:80px 0 60px;color:var(--brown);}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;margin:40px 0;}
-    .card{background:white;border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.08);transition:all .4s;}
-    .card:hover{transform:translateY(-12px);}
-    .card-header{background:var(--gold);color:var(--dark);padding:50px 20px;text-align:center;}
-    .card-header h3{font-family:'Clash Display',sans-serif;font-size:2.2rem;}
-    .price{font-size:3.8rem;font-weight:700;}
-    .card-body{padding:40px;text-align:center;}
-    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;text-align:center;margin:60px 0;}
-    .step h3{font-family:'Clash Display',sans-serif;color:var(--brown);}
-    #contact{background:var(--dark);color:white;padding:140px 20px;text-align:center;}
-    form{max-width:600px;margin:0 auto;}
-    input,textarea{width:100%;padding:16px;margin:12px 0;border-radius:12px;border:none;font-size:1rem;}
-    button{background:var(--gold);color:var(--dark);cursor:pointer;}
-    footer{background:var(--dark);color:#ccc;padding:60px 20px;text-align:center;font-size:0.9rem;}
-    footer a{color:var(--gold);text-decoration:none;}
-    @media(max-width:768px){.guarantee{position:static;margin:20px auto;display:block;}}
+    body{font-family:'Satoshi',sans-serif;background:linear-gradient(45deg,#ff0080,#00ffff,#ffff00,#ff00ff);background-size:400%;animation:bgMelt 10s infinite;color:var(--dark);overflow:hidden;cursor:pointer;}
+    @keyframes bgMelt{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+    .container{max-width:1280px;margin:0 auto;padding:20px;position:relative;z-index:10;}
+    h1,h2,h3{font-family:'Clash Display',sans-serif;}
+    .btn{background:var(--gold);color:var(--dark);padding:16px 32px;border-radius:50px;font-weight:700;text-decoration:none;display:inline-block;margin:10px;}
+    .price{font-size:3rem;font-weight:900;color:#ff00ff;text-shadow:0 0 20px #00ff00;}
+    .card{background:white;padding:30px;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.3);margin:20px 0;text-align:center;}
+    #melt-warning{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);font-size:8vw;color:#00ffff;text-shadow:0 0 40px #ff00ff;z-index:99999;pointer-events:none;opacity:0;transition:opacity 1s;}
+    #melt-warning.show{opacity:1;}
   </style>
 </head>
 <body>
 
-  <div class="guarantee">Save $3k or It’s FREE</div>
+  <div id="melt-warning">CLICK = MELTDOWN</div>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Heartland Handshake</h1>
-      <p>you're dad is probably gay, and that coul save you thousands.</p>
-      <a href="#contact" class="btn">Free Quote Review</a>
-      <a href="https://gumroad.com/l/heartlandaudit" class="btn btn-outline">Start for $49</a>
-    </div>
-  </section>
+  <div class="container" id="content">
+    <h1 style="font-size:6rem;text-align:center;color:#00ff00;text-shadow:0 0 30px #ff00ff;">Heartland Handshake</h1>
+    <p style="text-align:center;font-size:2rem;color:#ffff00;">Ex-dealer turned chaos agent. Deals so hot they’re literally melting.</p>
 
-  <div class="container">
-    <h2>Choose Your Level</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="card-header"><h3>Audit</h3><div class="price">$49</div></div>
-        <div class="card-body"><p>I review your dealer quote line-by-line and show you exactly where to save.</p><a href="https://gumroad.com/l/heartlandaudit" class="btn">Get Audit</a></div>
-      </div>
-      <div class="card">
-        <div class="card-header"><h3>Call</h3><div class="price">$99</div></div>
-        <div class="card-body"><p>15-minute strategy session + dealer scripts.</p><a href="https://gumroad.com/l/heartlandcall" class="btn">Book Call</a></div>
-      </div>
-      <div class="card">
-        <div class="card-header" style="background:#0F0A05;color:white;"><h3 style="color:white;">Full Deal</h3><div class="price" style="color:white;">$1,999</div></div>
-        <div class="card-body"><p>I shop dealers, negotiate, review contracts.<br>You just sign the best price.</p><a href="mailto:hello@heartlandhandshake.com" class="btn" style="background:#0F0A05;color:white;">Inquire Now</a></div>
-      </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:50px;">
+      <div class="card"><h3>Audit</h3><div class="price">$49</div><p>Quote review that drips with savings</p><a href="https://gumroad.com/l/heartlandaudit" class="btn">BUY NOW</a></div>
+      <div class="card"><h3>Call</h3><div class="price">$99</div><p>15-min strategy call from the void</p><a href="https://gumroad.com/l/heartlandcall" class="btn">BOOK NOW</a></div>
+      <div class="card" style="background:#000;color:#0f0;"><h3 style="color:#ff0;">FULL DEAL</h3><div class="price">$1,999</div><p>I negotiate while reality collapses</p><a href="mailto:hello@heartlandhandshake.com" class="btn" style="background:#0f0;color:#000;">INQUIRE</a></div>
     </div>
 
-    <h2>How It Works</h2>
-    <div class="steps">
-      <div class="step"><h3>1. Send Quote</h3><p>60 seconds</p></div>
-      <div class="step"><h3>2. I Negotiate</h3><p>Dealers compete</p></div>
-      <div class="step"><h3>3. You Save</h3><p>Thousands richer</p></div>
-    </div>
+    <h2 style="text-align:center;margin:60px 0;font-size:4rem;color:#ff00ff;">How It Works (before everything falls apart)</h2>
+    <ol style="font-size:2rem;text-align:center;list-style:none;">
+      <li>1. Send quote → gravity weakens</li>
+      <li>2. I negotiate → physics breaks</li>
+      <li>3. You save thousands → site melts</li>
+    </ol>
   </div>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Ready to Save Thousands?</h2>
-      <p style="font-size:1.3rem;margin-bottom:40px;">Send your quote for a free review — no obligation.</p>
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" rows="5" placeholder="Paste your dealer quote or question..."></textarea>
-        <button type="submit" class="btn">Send for Free Review</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>© 2025 Heartland Handshake LLC • Nebraska • Independent Service</p>
-    </div>
-  </footer>
-<!-- SHAQ ATTACK – DELETE ANYTIME -->
-<div id="shaq-attack" style="position:fixed;bottom:20px;right:20px;z-index:9999;animation:shaqDance 3s infinite;">
-  <img src="https://www.pngmart.com/files/22/Shaquille-ONeal-PNG-File.png" alt="Shaq dancing" width="180">
-  <div style="background:#E8B923;color:#0F0A05;padding:10px 16px;border-radius:50px;font-weight:bold;margin-top:8px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.3);">
-    DEAL SO GOOD SHAQ HAD TO DANCE 🤝
-  </div>
-</div>
-
-<style>
-@keyframes shaqDance {
-  0%, 100% { transform:translateY(0) rotate(0deg); }
-  25% { transform:translateY(-20px) rotate(-5deg); }
-  50% { transform:translateY(-10px) rotate(5deg); }
-  75% { transform:translateY(-25px) rotate(-3deg); }
-}
-#shaq-attack:hover { animation-duration:0.8s; }
-</style>
-<!-- END SHAQ ATTACK -->
-  <!-- GRAVY SEASON TAKEOVER – DELETE WHEN YOU'RE DONE BEING A LEGEND -->
-<div id="gravy-season" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:99999;pointer-events:none;overflow:hidden;">
-  <h1 style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-15deg);font-size:clamp(4rem,20vw,18rem);font-weight:900;
-             color:#FFD700;text-shadow:8px 8px #8B4513,-8px -8px #FF4500,0 0 40px #FFA500;
-             animation:gravyPulse 1.8s infinite alternate,gravyWobble 0.6s infinite,gravyFloat 12s infinite linear;
-             font-family:'Comic Sans MS',cursive, sans-serif;letter-spacing:0.1em;">
-    GRAVY SEASON
-  </h1>
-</div>
-
-<style>
-@keyframes gravyPulse {
-  0% { text-shadow:8px 8px #8B4513,-8px -8px #FF4500,0 0 40px #FFA500; }
-  100% { text-shadow:20px 20px #654321,-20px -20px #FF0000,0 0 100px #FF8C00,0 0 150px #FF4500; }
-}
-@keyframes gravyWobble {
-  0%,100% { transform:translate(-50%,-50%) rotate(-15deg) scale(1); }
-  50% { transform:translate(-50%,-50%) rotate(-12deg) scale(1.15); }
-}
-@keyframes gravyFloat {
-  0% { transform:translate(-50%,-50%) rotate(-15deg) translateX(-100vw); }
-  100% { transform:translate(-50%,-50%) rotate(-15deg) translateX(100vw); }
-}
-</style>
-<!-- END GRAVY SEASON -->
-  <!-- SCAM MODE ACTIVATED – DELETE WHEN YOU'RE DONE COOKING -->
-<div id="scam-takeover" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:99999;pointer-events:none;overflow:hidden;background:linear-gradient(45deg,#ff0080,#00ff00,#ffff00,#ff0080);background-size:400% 400%;animation:scamBG 8s ease infinite;">
-
-  <!-- BLINKING "WINNER" TEXT -->
-  <h1 style="position:absolute;top:10%;left:50%;transform:translateX(-50%);font-size:clamp(3rem,12vw,10rem);color:#fff;text-shadow:0 0 20px #ff0000;font-weight:900;
-             animation:blink 0.5s infinite alternate,spin 4s infinite linear;font-family:'Comic Sans MS',cursive;">
-    🎉 CONGRATULATIONS!!! 🎉
-  </h1>
-
-  <!-- SPINNING PHOTOS (fill your own URLs) -->
-  <img src="https://static.vecteezy.com/system/resources/previews/009/660/119/non_2x/salamander-watercolor-illustration-png.png" style="position:absolute;top:20%;left:10%;width:250px;border:10px solid #00ff00;border-radius:50%;box-shadow:0 0 40px #ffff00;animation:spin 3s infinite linear;">
-  <img src="https://static.vecteezy.com/system/resources/previews/067/221/493/non_2x/gravy-on-transparent-background-free-png.png" style="position:absolute;top:60%;right:10%;width:300px;border:10px dashed #ff00ff;animation:spin 2.5s infinite reverse;">
-  <img src="https://www.pngmart.com/files/23/Shaq-PNG-Photos.png" style="position:absolute;bottom:10%;left:20%;width:200px;border:15px double #0000ff;animation:bounce 1.5s infinite;">
-
-  <!-- FLASHING "CLAIM NOW" BUTTON (fake) -->
-  <div style="position:absolute;bottom:15%;left:50%;transform:translateX(-50%);background:#ff0000;color:#ffff00;padding:30px 60px;border-radius:50px;
-              font-size:3rem;font-weight:900;box-shadow:0 0 50px #ffff00;animation:flash 0.4s infinite alternate;">
-    CLAIM YOUR PRIZE NOW!!!
-  </div>
-
-  <!-- MARQUEE TEXT -->
-  <marquee direction="left" style="position:absolute;top:45%;width:100%;font-size:4rem;color:#00ffff;text-shadow:0 0 20px #ff00ff;font-weight:bold;">
-    🚨 LIMITED TIME ONLY 🚨 100% REAL 🚨 ACT NOW OR LOSE FOREVER 🚨
-  </marquee>
-
-</div>
-
-<style>
-@keyframes scamBG {0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-@keyframes spin {from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-@keyframes bounce {0%,100%{transform:translateY(0)}50%{transform:translateY(-40px)}}
-@keyframes flash {from{box-shadow:0 0 50px #ffff00}to{box-shadow:0 0 100px #ff0000}}
-@keyframes blink {from{opacity:0.6}to{opacity:1}}
-</style>
-<!-- END SCAM MODE -->
-  <!-- MAXIMUM CHAOS MODE — DELETE WHEN FBI ARRIVES -->
-<div id="chaos-9000" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:99999;overflow:hidden;background:linear-gradient(45deg,#ff0000,#00ff00,#0000ff,#ffff00,#ff00ff);background-size:600%;animation:chaosBG 6s infinite;pointer-events:none;">
-
-  <!-- SCREAMING TEXT -->
-  <h1 style="position:absolute;top:5%;left:50%;transform:translateX(-50%);font-size:clamp(4rem,18vw,16rem);color:#fff;text-shadow:0 0 40px #f00,0 0 80px #0f0;font-weight:900;
-             animation:blink 0.3s infinite alternate,scream 2s infinite;font-family:'Comic Sans MS';letter-spacing:0.2em;">
-    🔥🔥 GRAVY SEASON IS HERE 🔥🔥
-  </h1>
-
-  <!-- SPINNING + BOUNCING PHOTOS (replace URLs) -->
-  <img src="https://gld-creative.s3.us-west-2.amazonaws.com/2024-infiniti-q50-luxe-model-trim-4d6667ca9cf2-600x300.png" class="chaos-img" style="top:10%;left:5%;width:280px;animation:spin 2s infinite linear,bounce 1.2s infinite;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkq-JHHTPeaCueHpvgXkJ9YU6lh7sGfEYrcA&s" class="chaos-img" style="top:55%;right:8%;width:320px;animation:spin 1.8s infinite reverse,flash 0.6s infinite;">
-  <img src="https://i.ytimg.com/vi/7vG4wcWiwPw/sddefault.jpg" class="chaos-img" style="bottom:10%;left:15%;width:240px;animation:bounce 1s infinite,spin 3s infinite;">
-  <img src="https://www.eagleeyeproduce.com/wp-content/uploads/2023/07/Uniform.png" class="chaos-img" style="top:30%;right:20%;width:300px;animation:wobble 0.8s infinite;">
-  <img src="https://di-uploads-pod42.dealerinspire.com/infinitiofomaha/uploads/2024/07/AJ-Urban-356x356.jpg" class="chaos-img" style="bottom:25%;right:5%;width:260px;animation:spin 2.5s infinite,flash 0.5s infinite;">
-
-  <!-- MOUSE-FOLLOWING "BUY NOW" BUTTON -->
-  <div id="follow-btn" style="position:fixed;padding:20px 50px;background:#ff00ff;color:#00ff00;font-size:3rem;font-weight:900;border:8px solid #ffff00;
-                               border-radius:50px;box-shadow:0 0 60px #f00;z-index:999999;pointer-events:all;cursor:pointer;">
-    BUY NOW OR CRY LATER!!!
-  </div>
-
-  <!-- FAKE WINDOWS XP ERROR POPUPS -->
-  <div class="error-popup" style="top:15%;left:10%;">⚠️ YOUR COMPUTER HAS VIRUS ⚠️</div>
-  <div class="error-popup" style="bottom:20%;right:15%;">🚨 CLICK OK TO CLAIM $1,000,000 🚨</div>
-
-  <!-- MARQUEES EVERYWHERE -->
-  <marquee direction="left" style="top:40%;font-size:5rem;color:#00ffff;">🚨 ACT NOW 🚨 LIMITED TIME 🚨 100% REAL 🚨</marquee>
-  <marquee direction="right" style="bottom:40%;font-size:4rem;color:#ff00ff;">WINNER WINNER CHICKEN DINNER 🍗🍗🍗</marquee>
-
-  <!-- CONFETTI CANNON -->
-  <div style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;">
-    <img src="https://i.imgur.com/5oQ6u9I.gif" style="width:100%;height:100%;object-fit:cover;opacity:0.7;">
-  </div>
-
-</div>
-
-<style>
-@keyframes chaosBG {0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-@keyframes spin {from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-@keyframes bounce {0%,100%{transform:translateY(0)}50%{transform:translateY(-50px)}}
-@keyframes wobble {0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
-@keyframes flash {0%{box-shadow:0 0 40px #fff}100%{box-shadow:0 0 80px #f00}}
-@keyframes scream {0%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.3)}100%{transform:translateX(-50%) scale(1)}}
-.chaos-img{position:absolute;border:12px dashed #ffff00;border-radius:50%;box-shadow:0 0 50px #ff00ff;}
-.error-popup{position:absolute;background:#0000ff;color:#ffff00;padding:15px 30px;border:5px solid #ff0000;font-size:2rem;font-weight:900;animation:blink 0.4s infinite;}
-</style>
 
 <script>
-// Mouse-following button of doom
-document.addEventListener('mousemove', e => {
-  const btn = document.getElementById('follow-btn');
-  btn.style.left = e.clientX + 20 + 'px';
-  btn.style.top = e.clientY - 20 + 'px';
+// MELTING GRAVITY SCRIPT — CLICK ANYWHERE = TOTAL COLLAPSE
+document.body.addEventListener('click', function startMeltdown() {
+  document.getElementById('melt-warning').classList.add('show');
+  
+  const elements = document.querySelectorAll('#content > *');
+  elements.forEach((el, i) => {
+    el.style.position = 'relative';
+    el.style.transition = 'all 3s cubic-bezier(0.2, 0.8, 0.4, 1)';
+    el.style.transform = `translate(${Math.random() > 0.5 ? '-' : ''}${Math.random()*100}vw, ${100 + Math.random()*100}vh) rotate(${Math.random()*720-360}deg) scale(${Math.random()*0.8 + 0.5})`;
+    el.style.opacity = Math.random()*0.7 + 0.1;
+    el.style.filter = 'blur(2px)';
+  });
+
+  // Add floating duplicate text that falls forever
+  setInterval(() => {
+    const txt = document.createElement('div');
+    txt.textContent = ['GRAVY SEASON','DEAL SO GOOD','MELTING...','CHAOS']['random'() * 4 | 0];
+    txt.style.position = 'fixed';
+    txt.style.left = Math.random()*100 + 'vw';
+    txt.style.top = '-10vh';
+    txt.style.fontSize = '4vw';
+    txt.style.color = ['#f00','#0f0','#00f','#ff0'][Math.random()*4|0];
+    txt.style.fontWeight = '900';
+    txt.style.pointerEvents = 'none';
+    txt.style.animation = 'fall 8s linear forwards';
+    document.body.appendChild(txt);
+  }, 300);
+
+  document.body.style.overflow = 'hidden';
+  document.body.removeEventListener('click', startMeltdown); // Only once
 });
 
-// Random horns every 2-5 seconds
-setInterval(() => {
-  const audio = new Audio('https://www.pond5.com/sound-effects/item/58316678-grunting-sound?dd_referrer=https%3A%2F%2Fwww.google.com%2F');
-  audio.play().catch(() => {});
-}, Math.random() * 3000 + 2000);
+// CSS for falling text
+const style = document.createElement('style');
+style.textContent = `
+@keyframes fall {to {transform:translateY(110vh) rotate(720deg);opacity:0;}}
+`;
+document.head.appendChild(style);
 </script>
-<!-- END MAXIMUM CHAOS -->
-  <!-- MAXIMUM CHAOS MODE — DELETE WHEN FBI ARRIVES -->
-<div id="chaos-9000" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:99999;overflow:hidden;background:linear-gradient(45deg,#ff0000,#00ff00,#0000ff,#ffff00,#ff00ff);background-size:600%;animation:chaosBG 6s infinite;pointer-events:none;">
 
-  <!-- SCREAMING TEXT -->
-  <h1 style="position:absolute;top:5%;left:50%;transform:translateX(-50%);font-size:clamp(4rem,18vw,16rem);color:#fff;text-shadow:0 0 40px #f00,0 0 80px #0f0;font-weight:900;
-             animation:blink 0.3s infinite alternate,scream 2s infinite;font-family:'Comic Sans MS';letter-spacing:0.2em;">
-    🔥🔥 GRAVY SEASON IS HERE 🔥🔥
-  </h1>
-
-  <!-- SPINNING + BOUNCING PHOTOS (replace URLs) -->
-  <img src="https://images.freeimages.com/image/previews/fa3/money-icon-png-finance-bills-5690620.png" class="chaos-img" style="top:10%;left:5%;width:280px;animation:spin 2s infinite linear,bounce 1.2s infinite;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCnfDUyMHruqPueNz12tBxXw2AcyG2fM6-Zg&s" class="chaos-img" style="top:55%;right:8%;width:320px;animation:spin 1.8s infinite reverse,flash 0.6s infinite;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-brfgkXtbX2OQk0QAoZTlCdfVquxD8-vKgw&s" class="chaos-img" style="bottom:10%;left:15%;width:240px;animation:bounce 1s infinite,spin 3s infinite;">
-  <img src="https://i.ebayimg.com/images/g/RfgAAOSw7fJgOptv/s-l400.png" class="chaos-img" style="top:30%;right:20%;width:300px;animation:wobble 0.8s infinite;">
-  <img src="https://static.vecteezy.com/system/resources/previews/037/276/729/non_2x/ai-generated-a-dollop-of-whipped-cream-isolated-on-a-transparent-background-png.png" class="chaos-img" style="bottom:25%;right:5%;width:260px;animation:spin 2.5s infinite,flash 0.5s infinite;">
-
-  <!-- MOUSE-FOLLOWING "BUY NOW" BUTTON -->
-  <div id="follow-btn" style="position:fixed;padding:20px 50px;background:#ff00ff;color:#00ff00;font-size:3rem;font-weight:900;border:8px solid #ffff00;
-                               border-radius:50px;box-shadow:0 0 60px #f00;z-index:999999;pointer-events:all;cursor:pointer;">
-    BUY NOW OR CRY LATER!!!
-  </div>
-
-  <!-- FAKE WINDOWS XP ERROR POPUPS -->
-  <div class="error-popup" style="top:15%;left:10%;">⚠️ YOUR COMPUTER HAS VIRUS ⚠️</div>
-  <div class="error-popup" style="bottom:20%;right:15%;">🚨 CLICK OK TO CLAIM $1,000,000 🚨</div>
-
-  <!-- MARQUEES EVERYWHERE -->
-  <marquee direction="left" style="top:40%;font-size:5rem;color:#00ffff;">🚨 ACT NOW 🚨 LIMITED TIME 🚨 100% REAL 🚨</marquee>
-  <marquee direction="right" style="bottom:40%;font-size:4rem;color:#ff00ff;">WINNER WINNER CHICKEN DINNER 🍗🍗🍗</marquee>
-
-  <!-- CONFETTI CANNON -->
-  <div style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;">
-    <img src="https://i.imgur.com/5oQ6u9I.gif" style="width:100%;height:100%;object-fit:cover;opacity:0.7;">
-  </div>
-
-</div>
-
-<style>
-@keyframes chaosBG {0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-@keyframes spin {from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-@keyframes bounce {0%,100%{transform:translateY(0)}50%{transform:translateY(-50px)}}
-@keyframes wobble {0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
-@keyframes flash {0%{box-shadow:0 0 40px #fff}100%{box-shadow:0 0 80px #f00}}
-@keyframes scream {0%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.3)}100%{transform:translateX(-50%) scale(1)}}
-.chaos-img{position:absolute;border:12px dashed #ffff00;border-radius:50%;box-shadow:0 0 50px #ff00ff;}
-.error-popup{position:absolute;background:#0000ff;color:#ffff00;padding:15px 30px;border:5px solid #ff0000;font-size:2rem;font-weight:900;animation:blink 0.4s infinite;}
-</style>
-
-<script>
-// Mouse-following button of doom
-document.addEventListener('mousemove', e => {
-  const btn = document.getElementById('follow-btn');
-  btn.style.left = e.clientX + 20 + 'px';
-  btn.style.top = e.clientY - 20 + 'px';
-});
-
-// Random horns every 2-5 seconds
-setInterval(() => {
-  const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
-  audio.play().catch(() => {});
-}, Math.random() * 3000 + 2000);
-</script>
-<!-- END MAXIMUM CHAOS -->
 </body>
-
 </html>
-
-
-
-
-
